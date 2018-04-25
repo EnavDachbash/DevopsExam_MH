@@ -11,7 +11,7 @@ Web tier (Apache servers) environment is configured to run with a minimum of 3 s
 * HAproxy server is listening on port 80 and balances the traffic to the web tier (using roundrobin algorythm). 
 
 
-# Setting up the environment
+## Setting up the environment
 The cluster size can be controlled by setting a variable called WebFarm. 
 NOTE: if you choose to scale up the cluster while the environment is up and runnig, make sure to re-provision the haproxy server for the new configuration to apply (vagrant provision <apacheservername>). 
 
@@ -23,6 +23,6 @@ node2 (192.168.50.101) - apache server
 node3 (192.168.50.102) - apache server
 node4 (192.168.50.103) - apache server
 
-# Resetting the environment
+## Resetting the environment
 In case an environment reset is needed, open a shell terminal and navigate to the Vagrantfile location and run vagrant destroy.
 Once the command completes, perform the Build instructions again to build from scratch.
