@@ -17,11 +17,11 @@ NOTE: if you choose to scale up the cluster while the environment is up and runn
 
 In order to create the environment, open a shell terminal, navigate to the folder to which this project was cloned (e.g. in which the Vagrantfile is located) and type 'vagrant up'.Depending on the host, it may take ~10-20 minutes for the entire environment to be up and running.
 
-The first 4 nodes will be set up accordingly:
-node1 (192.168.50.2) - haproxy server
-node2 (192.168.50.101) - apache server 
-node3 (192.168.50.102) - apache server
-node4 (192.168.50.103) - apache server
+The first 4 nodes will be set up accordingly:  
+node1 (192.168.50.2) - haproxy server  
+node2 (192.168.50.101) - apache server  
+node3 (192.168.50.102) - apache server  
+node4 (192.168.50.103) - apache server  
 
 ## Resetting the environment
 In case an environment reset is needed, open a shell terminal and navigate to the Vagrantfile location and run vagrant destroy.
