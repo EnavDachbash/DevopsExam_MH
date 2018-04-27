@@ -26,4 +26,20 @@ Vagrant.configure("2") do |config|
 			node.vm.provision "shell", path: "apache.sh", run: "always", args: "apacheserver0#{i} 192.168.50.10#{i}"
 		end
 	end 
+	
+	config.vm.define :logstash do |logstashserver|
+		logstashserver.vm.box = "centos/7"
+		logstashserver.vm.box_version = "1803.01"
+		logstashserver.vm.network :private_network, ip: "192.168.50.3"
+		logstashserver.vm.provision "shell", path: "logstash.sh", run: "always"
+		logstashserver.vm.hostname = "logstashserver"
+	end
+	
+	config.vm.define :elasticsearch do |elasticsearchserver|
+		elasticsearchserver.vm.box = "centos/7"
+		elasticsearchserver.vm.box_version = "1803.01"
+		elasticsearchserver.vm.network :private_network, ip: "192.168.50.4"
+		elasticsearchserver.vm.provision "shell", path: "elastic.sh", run: "always"
+		elasticsearchserver.vm.hostname = "elasticsearchserver"
+	end
 end
