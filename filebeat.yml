@@ -1,0 +1,20 @@
+#=========================== Filebeat prospectors =============================
+filebeat.prospectors:
+- input_type: log
+  fields_under_root: true
+  ignore_older: 24h
+  clean_inactive: 48h
+  fields:
+    type: syslog
+  paths:
+    - "/var/log/*.log"
+    - "/var/log/*/*.log"
+    
+#================================ Outputs =====================================
+output.logstash:
+  enabled: true
+  hosts:
+    - "192.168.50.3:5044"
+  loadbalance: true
+  bulk_max_size: 1024
+  
