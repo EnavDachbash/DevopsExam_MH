@@ -34,7 +34,7 @@ node4 (192.168.50.103) - apache server
 **ELK Stack**
 This ELK stack consists of 2 servers:
 1. logstash server forwarding logs to an elasticsearch node (listenning on port 5044 for filebeats input and forwariding on port 9200). 
-2. elastic server hosting kibana accessible at: http://http://192.168.50.4:5601/
+2. elastic server hosting kibana accessible at: http://192.168.50.4:5601/
 
 ## Resetting the environment
 In case an environment reset is needed, open a shell terminal and navigate to the Vagrantfile location and run vagrant destroy.
