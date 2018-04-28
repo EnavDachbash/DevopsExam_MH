@@ -2,7 +2,7 @@
 This project sets up an environment that contains 4 VMs running HAproxy and Apache2. 
 The virtual machines are Linux-based (Ubuntu 12.04) and are supported by VirtualBox provider. 
 
-NOTE: A mandatory requirement for this project is to have Vagrant installed.
+NOTE: A mandatory requirement for this project is to have Vagrant installed. **Make sure to extract all files into the same vagrant folder for 'vagrant up' to work accordingly.** 
 
 In this project: the Apache & HAproxy servers are installed directly on the VMs. 
 Web tier (Apache servers) environment is configured to run with a minimum of 3 servers, for redundancy purposes. 
@@ -12,6 +12,7 @@ Web tier (Apache servers) environment is configured to run with a minimum of 3 s
 
 
 ## Setting up the environment
+**web-tier**
 The cluster size can be controlled by setting a variable called WebFarm. 
 NOTE: if you choose to scale up the cluster while the environment is up and runnig, make sure to re-provision the haproxy server for the new configuration to apply (vagrant provision <apacheservername>). 
 
@@ -22,6 +23,14 @@ node1 (192.168.50.2) - haproxy server
 node2 (192.168.50.101) - apache server  
 node3 (192.168.50.102) - apache server  
 node4 (192.168.50.103) - apache server  
+
+**ELK Stack**
+This ELK stack consists of 2 servers:
+1. logstash server forwarding logs to an elasticsearch node (listenning on port 5044 for filebeats input and forwariding on port 9200). 
+2. elastic server hosting kibana accessible at: http://http://192.168.50.4:5601/
+
+**when running for the first time, you might encounter Kibana's management page to view logs. 
+you must choose default-index-pattern, i chose * for this lab purposes, as well as assigned @timestamp for the default time parsing.**
 
 ## Resetting the environment
 In case an environment reset is needed, open a shell terminal and navigate to the Vagrantfile location and run vagrant destroy.
