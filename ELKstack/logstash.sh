@@ -6,6 +6,7 @@
 	
 # Install logstash    
 	sudo cp -f /vagrant/logstash.repo /etc/yum.repos.d
+	sudo yum update
 	sudo yum install -y logstash
 	sudo cp -f /vagrant/logstashbeats-input.conf /etc/logstash/conf.d
 	sudo mkdir /etc/logstash/patterns
