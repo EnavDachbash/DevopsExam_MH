@@ -1,9 +1,10 @@
 # DevopsExam_MH
-This project sets up an environment that contains 4 VMs running HAproxy and Apache2. 
-The virtual machines are Linux-based (Ubuntu 12.04) and are supported by VirtualBox provider. 
+This project sets up an environment that contains 6 VMs running HAproxy, Apache2, Logstash, Elasticsearch and Kibana. 
+The virtual machines are Linux-based (Ubuntu 12.04 OR CentOS7) and are supported by VirtualBox provider. 
 
 NOTE: A mandatory requirement for this project is to have Vagrant installed. **Make sure to extract all files into the same vagrant folder for 'vagrant up' to work accordingly.** 
 
+# Lab Description:
 In this project: the Apache & HAproxy servers are installed directly on the VMs. 
 Web tier (Apache servers) environment is configured to run with a minimum of 3 servers, for redundancy purposes. 
 
